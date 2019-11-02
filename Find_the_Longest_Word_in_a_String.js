@@ -2,21 +2,27 @@ function findLongestWordLength(str) {
     let splitarray = str.split(' ');
     let longestWord = splitarray[0];
 
-    for (let i = 0; i < splitarray.length; i++) {
-
-
-        // console.log(splitarray[i])
-        if (splitarray[i].length > longestWord.length) {
-            longestWord = splitarray[i];
-            
+    splitarray.forEach((word, index) => {
+        if (word.length > longestWord.length) {
+            longestWord = word;
         }
-    }
-    console.log(longestWord.length);
+    });
+
+    // for (let i = 0; i < splitarray.length; i++) {
 
 
-    return str.length;
+    //     // console.log(splitarray[i])
+    //     if (splitarray[i].length > longestWord.length) {
+    //         longestWord = splitarray[i];
+
+    //     }
+    // }
+    // console.log(longestWord.length);
+
+
+    return longestWord.length;
 
 
 }
 
-findLongestWordLength("The quick brown fox jumped over the lazy dog");
+console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog"));
