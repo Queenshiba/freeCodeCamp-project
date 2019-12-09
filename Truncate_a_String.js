@@ -8,4 +8,4 @@ function truncateString(str, num) {
     }
 }
 
-console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", 10));
