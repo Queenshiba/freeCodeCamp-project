@@ -1,16 +1,22 @@
 function diffArray(arr1, arr2) {
     var newArr = [];
+    // keep itorating the length of arr1
     for (var i = 0; i < arr1.length; i++) {
+        // if arr2 doesn't have(-1) the same item in arr1
         if (arr2.indexOf(arr1[i]) === -1) {
+            // push the diff item to newArr
             newArr.push(arr1[i]);
         }
     }
+    // keep itorating the length of arr2
     for (var j = 0; j < arr2.length; j++) {
+        // if arr1 doesn't have(-1) the same item in arr2
         if (arr1.indexOf(arr2[j]) === -1) {
+            // push the diff item to newArr
             newArr.push(arr2[j]);
         }
     }
-    // Same, same; but different.
+    //
     return newArr;
 }
 
