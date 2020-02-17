@@ -1,8 +1,10 @@
 function spinalCase(str) {
-const cap = str.replace(/([a-z])([A-Z])/g, '$1 $2');
-const replaced = cap.replace(/_/g, '-').replace(/\s+/g, '-').toLowerCase();;
+    //find and replace each occurrence of a lower case character followed by an upper case character, and insert a space between them
+const addedSpace = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+//replace underscore to dash and make all lowercase
+const allReplaced = addedSpace.replace(/_/g, '-').replace(/\s+/g, '-').toLowerCase();;
 
-return replaced
+return allReplaced
 
 }
 
