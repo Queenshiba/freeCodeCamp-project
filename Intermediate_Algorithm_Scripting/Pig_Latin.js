@@ -5,19 +5,19 @@
 
 function translatePigLatin(str) {
     const vowels = /[aeiuo]/g;
-    if (str[0].match(vowels)) {
+    if (str[0].match(vowels)) { // if the first letter is a vowel
         return str + "way"
-    } else if (str.match(vowels) === null) {
+    } else if (str.match(vowels) === null) { // if str doesn't have any vowels
         return str + "ay"
     } else {
-        const firstVowel = str.match(vowels)[0];
+        const firstVowel = str.match(vowels)[0]; // first vowel
         // Or you can use this instead
         //const [firstVowel] = str.match(vowels);
         const indexOftheFirstVowel = str.indexOf(firstVowel) // index of first vowel
-        const removeCosonants = str.substr(indexOftheFirstVowel) //
-        const restStr = str.substr(0, indexOftheFirstVowel);
+        const removeCosonants = str.substr(indexOftheFirstVowel) //remove consonats in the word
+        const restStr = str.substr(0, indexOftheFirstVowel);// the rest of the word with removed consonants
 
-        return removeCosonants + restStr + "ay"
+        return removeCosonants + restStr + "ay" // all together
     }
 }
 
