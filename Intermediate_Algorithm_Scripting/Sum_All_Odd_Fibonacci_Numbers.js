@@ -2,7 +2,9 @@ function sumFibs(num) {
     // create empty arrays
     const fibArr = []
     const odd = []
-    // set the first, second items in fibArr 0 and 1, because Fibonacci sequence is created by the equation, which is Fn = F{n-1} + F{n-2}  
+    // set the first, second items in fibArr 0 and 1, 
+    // because Fibonacci sequence is created by the equation, 
+    // which is Fn = F{n-1} + F{n-2}  
     fibArr[0] = 0
     fibArr[1] = 1;
 
