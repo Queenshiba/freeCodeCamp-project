@@ -1,17 +1,22 @@
 function fearNotLetter(str) {
     // const aToZ = /^[a-z]*$/
     const missing = []
+    var startCode = str.charCodeAt(0);
+    // console.log(startCode)
     for (let i = 0; i < str.length; i++) {
-        missing.push(str.charCodeAt([i]))
-        const first = missing[0]
-        console.log(first)
-        const last = missing[i]
-        console.log(last)
+        if (str.charCodeAt(i) !== startCode) {
+            return String.fromCharCode(startCode)
+        } else {
+            startCode++
+        }
+        // missing.push(str.charCodeAt([i]))
+    // const first = missing[0] 
+    // console.log(first)
+    // const last = missing[i] 
+    // console.log(last)
     }
 
-    return missing
 }
-
 
 
 
