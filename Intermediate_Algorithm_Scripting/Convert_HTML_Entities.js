@@ -4,27 +4,19 @@ function convertHTML(str) {
         '&': '&amp;',
         '<': '&lt;',
         '>': '&gt;',
-        "'": '&#39;',
+        "'": '&apos;',
         '"': '&quot;'
     }
 
-
-    const strSplit = str.split(' ')
-const objectKeys = Object.keys(reg).toString()
-const objectValue = Object.values(reg).toString()
-console.log(objectKeys)
-    for (let j = 0; j < strSplit.length; j++) {
-        for (let i = 0; i < objectKeys.length; i++) {
-        if (strSplit[j] = objectKeys[i]) {
-            
-            replaced = str.replace(strSplit[j], objectValue[j]);
-            // return 
-
-        }
-        return replaced
+    const strSplit = str.split('')
+const converted = strSplit.map((item) => {
+    if (reg[item]) {
+        return reg[item]
+    } else {
+        return item;
     }
-    }
-
+})
+return converted.join('')
 
 }
 
