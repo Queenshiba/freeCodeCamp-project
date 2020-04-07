@@ -8,7 +8,9 @@ function convertHTML(str) {
         '"': '&quot;'
     }
 
-    const strSplit = str.split('')
+    // split str with each word
+const strSplit = str.split('')
+// if strSprit has key in reg, return the value
 const converted = strSplit.map((item) => {
     if (reg[item]) {
         return reg[item]
@@ -16,6 +18,7 @@ const converted = strSplit.map((item) => {
         return item;
     }
 })
+// join strSplit together
 return converted.join('')
 
 }
