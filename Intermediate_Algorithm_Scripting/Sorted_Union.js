@@ -1,18 +1,17 @@
 function uniteUnique(...arr) {
   let test = []
-for (let i = 0; i < arr.length; i++) {
-arr[i].forEach(element => {
-  if (!test.includes(element))
-  test.push(element)
-});
-  
+  // iterate while the length of arrays in parameter
+  for (let i = 0; i < arr.length; i++) {
+    // keep going through each items in an array
+    arr[i].forEach(element => {
+      // if push the number if the same one is not in the test array 
+      if (!test.includes(element))
+        test.push(element)
+    });
+  } return test;
 }
 
-
-    return test;
-  }
-  
-  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
 
 console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])) // should return [1, 3, 2, 5, 4].
