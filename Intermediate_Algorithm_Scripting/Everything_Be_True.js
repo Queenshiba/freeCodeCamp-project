@@ -1,17 +1,23 @@
 function truthCheck(collection, pre) {
+    // set an empty array
+    let checkedPre = []
+    // itorating the length of collection
     for (let i = 0; i < collection.length; i++) {
-        if (!collection[i][pre] ) {
-            // console.log(Object.keys(collection[i]))
-            return false
-        } 
-        else {
-            return true
+        // if the collection does NOT have pre, push the object to the set array'checkedPre'
+        if (!collection[i][pre]) {
+            checkedPre.push(collection[i])
         }
-// console.log(collection[i][pre])
+    }
+    // and check the items in the array
+    // if the item in the array is 0 (none), which means there is no UNMATCHED item that missing any keys or values from the object of pre
+    // then return ture
+    if (checkedPre.length === 0) {
+        return true
+    } else {
+        return false
     }
 
 
-    // return 
 }
 
 
@@ -21,7 +27,7 @@ console.log(truthCheck([{ "user": "Tinky-Winky", "sex": "male" }, { "user": "Dip
 // // should return false.
 // console.log(truthCheck([{ "user": "Tinky-Winky", "sex": "male", "age": 0 }, { "user": "Dipsy", "sex": "male", "age": 3 }, { "user": "Laa-Laa", "sex": "female", "age": 5 }, { "user": "Po", "sex": "female", "age": 4 }], "age"))  
 // // should return false.
-console.log(truthCheck([{ "name": "Pete", "onBoat": true }, { "name": "Repeat", "onBoat": true }, { "name": "FastForward", "onBoat": null }], "onBoat"))  
+console.log(truthCheck([{ "name": "Pete", "onBoat": true }, { "name": "Repeat", "onBoat": true }, { "name": "FastForward", "onBoat": null }], "onBoat"))
 // // should return false
 // console.log(truthCheck([{ "name": "Pete", "onBoat": true }, { "name": "Repeat", "onBoat": true, "alias": "Repete" }, { "name": "FastForward", "onBoat": true }], "onBoat"))  
 // // should return true
