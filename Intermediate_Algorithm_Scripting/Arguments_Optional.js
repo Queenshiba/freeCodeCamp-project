@@ -1,14 +1,16 @@
-function addTogether(...num) {
-let numArr = []
-for (let i = 0; i < num.length; i++) {
-    let numStr = num.toString()
-  if (typeof numStr[i] === 'number'){
-    numArr.push(numStr[i])
-    // console.log(numArr)
-} 
+function addTogether(num) {
+// let numArr = []
+// for (let i = 0; i < num.length; i++) {
+    
+//   if (typeof num[i] !== 'number'){
+//     numArr.push(num[i])
+//     console.log(numArr)
+// } 
 
-}
-return numArr
+// }
+// return numArr
+console.log(arguments[0])
+console.log(arguments[1])
     }
   
 console.log(addTogether(2, 3)) // should return 5.
