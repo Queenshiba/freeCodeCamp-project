@@ -1,4 +1,6 @@
 function smallestCommons(arr) {
+    // check which of two inputs is bigger or not
+    // because need to set a range from the small num to the big
     if (arr[0] < arr[1]) {
         start = arr[0]
         end = arr[1]
@@ -6,15 +8,19 @@ function smallestCommons(arr) {
         start = arr[1]
         end = arr[0]
     }
-
+    // set an empty arr to put numbers in the range 
     let range = []
     for (let i = start; i <= end; i++) {
         range.push(i)
     }
 
+    console.log(range)
+    // set another arr 
     let multi = []
     for (let j = 0; j < range.length; j++) {
-        multi.push(range[j]*range[j])
+
+        multi.push(range[j] * range[j])
+
     }
     return multi;
 }
