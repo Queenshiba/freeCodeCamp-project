@@ -14,13 +14,15 @@ function smallestCommons(arr) {
         range.push(i)
     }
 
-    console.log(range)
+    // console.log(range)
     // set another arr 
     let multi = []
     for (let j = 0; j < range.length; j++) {
 
-        multi.push([range[j] * range[j]])
-
+        multi.push([range[j]])
+    }
+    for (let z = 0; z < multi.length ; z++)  {
+        multi[z].push(multi[z]*multi[z])
     }
     return multi;
 }
