@@ -3,14 +3,12 @@ function steamrollArray(arr) {
     let replacedStr = arrStr.replace(",,", ",");
     let spletReplacedStr = replacedStr.split(",")
     console.log(spletReplacedStr)
+    let array = []
+    spletReplacedStr.array.forEach(element => {
+        // look up how to use map
+        array.push
+    });
 
-    // spletReplacedStr.map(item => {
-    //     if (typeof item === 'object') {
-    //         return {}
-    //     }
-    // }
-    // )
-console.log(spletReplacedStr[1])
 }
 
 
