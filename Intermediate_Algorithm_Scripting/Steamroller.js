@@ -3,12 +3,20 @@ function steamrollArray(arr) {
     let replacedStr = arrStr.replace(",,", ",");
     let spletReplacedStr = replacedStr.split(",")
     console.log(spletReplacedStr)
-    let array = []
-    spletReplacedStr.array.forEach(element => {
-        // look up how to use map
-        array.push
-    });
-
+    // let array = []
+   let result = spletReplacedStr.map(item => {
+        if (item == "[object Object]") {
+            return {}
+        } 
+        else if (isNaN(item)) {
+            // if not a number (string)
+            return item;
+        } 
+        // else {
+        //     return parseInt(item); // if a number in a string, convert it
+        // }
+    })
+return result
 }
 
 
