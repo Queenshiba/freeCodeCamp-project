@@ -6,18 +6,18 @@ function steamrollArray(arr) {
     // then splet them by ","
     let spletReplacedStr = replacedStr.split(",")
 
-    // console.log(spletReplacedStr)
 
     // use map function
     let result = spletReplacedStr.map(item => {
         // if any item is "[object Object]", return {}
         if (item == "[object Object]") {
             return {}
-        }
-
-        else {
-
+            // else if item is not a number, return item
+        } else if (isNaN(item)) {
             return item;
+            // else item is a string, convert
+        } else {
+            return parseInt(item)
         }
 
     })
