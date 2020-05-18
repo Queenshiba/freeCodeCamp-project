@@ -1,13 +1,17 @@
 function orbitalPeriod(arr) {
     var GM = 398600.4418;
     var earthRadius = 6367.4447;
-
+// return arr that went through the map method
     return arr.map(({ name, avgAlt }) => {
+        // solve inside root, cubed the sum of earthRadius and avgAlt and then divide it by GM
         let insideRoot = Math.pow(earthRadius + avgAlt, 3) / GM;
+        // to remove root, use Math.sqrt, basiclly find square root of insideRoot
         let removedRoot = Math.sqrt(insideRoot)
+        // 2 multipy the ratio of the circumference of a circle to its diameter and removedRoot
         let sum = 2 * Math.PI * removedRoot;
+        // change sum to the value of a number rounded to the nearest integer
         let orbitalPeriod = Math.round(sum)
-        // console.log(rounded)
+        // return objects replace avgAlt to orbitalPeriod
         return { name, orbitalPeriod}
     })
 
