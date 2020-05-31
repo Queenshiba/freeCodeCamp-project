@@ -19,7 +19,7 @@ var Person = function (firstAndLast) {
     };
     this.setFullName = function (name) {
         firstAndLast = name
-
+// decleare
     }
 };
 
