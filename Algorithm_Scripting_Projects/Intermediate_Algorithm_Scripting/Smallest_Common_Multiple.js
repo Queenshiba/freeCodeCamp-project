@@ -16,16 +16,13 @@ function smallestCommons(arr) {
 
 
     for (let k = 0; k < array.length; k++) {
-        sum = sum * array[k]
-
-        if (sum % k !== 0) {
-            return sum
-        } else {
-            return sum % array[k]
-        }
-
-        }
+        let sumArr = array.reduce( (a,b) => a * b, 1 )
+        return sumArr
+ } 
+ 
+console.log(array)
 }
+
 
 
 
