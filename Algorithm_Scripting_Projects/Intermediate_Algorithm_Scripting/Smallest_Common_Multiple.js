@@ -5,23 +5,33 @@ function smallestCommons(arr) {
     const max = arr[0] > arr[1] ? arr[0] : arr[1]
 
     console.log(min, max)
+let num = max
 
-    let array = []
-    let sum = min
-    for (let i = min; i <= max; i++) {
-        array.push(i)
-    }
-    console.log(array)
+    // let array = []
+    // let sum = min
+    // for (let i = min; i <= max; i++) {
+    //     array.push(i)
+    // }
+    // console.log(array)
 
-
-
-    for (let k = 0; k < array.length; k++) {
-        let sumArr = array.reduce( (a,b) => a * b, 1 )
-        return sumArr
- } 
+    // for (let k = 0; k < array.length; k++) {
+    //     let sumArr = array.reduce( (a,b) => a * b, 1 )
+       
+    //     let divide = sumArr / array[k]
+    //     console.log(divide)
+    // } 
  
-console.log(array)
+for (let i = max - 1; i >= min; i--) {
+    // Each time the solution checks (i.e. sol%i===0) it won't be necessary
+    // to increment 'max' to our solution and restart the loop
+    if (num % i) {
+        num += max;
+      i = max;
+    }
+  }
+  return num;
 }
+
 
 
 
