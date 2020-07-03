@@ -13,7 +13,8 @@
  In this section I've learned to solve basic algorithm problems using JavaScript, which improve my problem solving skills and prepare to later solve more complex problems.
 
 - Basic (Completed)
-- Intermediate (90% Completed)
+- Intermediate (Completed)
+- JavaScript Algorithms and Data Structures Projects (currently working on)
 
 ## Data Visualization
 These challenges let me test your data visualization skills and how to transfer and use data using AJAX technologies.
