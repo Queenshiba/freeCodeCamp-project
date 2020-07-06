@@ -5,7 +5,7 @@ function palindrome(str) {
     let splitRemoved = lowercasesRemoved.split('')
 
     // console.log('splitRemoved', splitRemoved[0])
-    console.log(splitRemoved.length)
+    console.log(splitRemoved)
 
     let reverse = [...splitRemoved].reverse()
     // let reverseLower = reverse.toLowerCase()
@@ -13,10 +13,10 @@ function palindrome(str) {
     console.log(reverse)
 
     for (let i = 0; i < splitRemoved.length; i++) {
-        if (splitRemoved[i] === reverse[i]) {
+        if (splitRemoved[i] !== reverse[i]) {
             // console.log("yes")
             return true
-        } else if(splitRemoved[i] !== reverse[i]) {
+        } else {
             return false
             // console.log("no")
         }
