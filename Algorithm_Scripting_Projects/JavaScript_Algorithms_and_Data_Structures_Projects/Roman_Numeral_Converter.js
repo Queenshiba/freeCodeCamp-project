@@ -13,7 +13,7 @@ function convertToRoman(num) {
     let ansewer = []
     for (let j = 0; j < main.length; j++) {
 
-        if (devidedNum.indexOf(main[j]) === 1) {
+        if (devidedNum.includes(main[j])) {
             ansewer.push(roman[j])
         }
        
