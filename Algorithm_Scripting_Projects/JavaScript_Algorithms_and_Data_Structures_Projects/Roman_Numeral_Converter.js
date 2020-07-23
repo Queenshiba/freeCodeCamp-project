@@ -13,18 +13,13 @@ function convertToRoman(num) {
     let ansewer = []
     for (let j = 0; j < main.length; j++) {
 
-        if (devidedNum.indexOf(main[j])) {
-            ansewer.push(roman[j])
-        }
-        
-      
- return ansewer
+if (devidedNum.includes(main[j])) {
+     ansewer.push(roman[j])   
+}
     }
-
+    return ansewer
 }
 
-
-// console.log(convertToRoman(36));
 
 // console.log(convertToRoman(2))// should return "II".
 // console.log(convertToRoman(3))//  should return "III".
@@ -33,7 +28,7 @@ function convertToRoman(num) {
 // console.log(convertToRoman(9))//  should return "IX".
 // console.log(convertToRoman(12)) //  should return "XII".
 // console.log(convertToRoman(16)) //  should return "XVI".
-// console.log(convertToRoman(29)) //  should return "XXIX".
+console.log(convertToRoman(29)) //  should return "XXIX".
 // console.log(convertToRoman(44)) //  should return "XLIV".
 console.log(convertToRoman(45)) //  should return "XLV"
 // console.log(convertToRoman(68)) //  should return "LXVIII"
