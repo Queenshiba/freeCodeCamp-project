@@ -5,24 +5,28 @@ function convertToRoman(num) {
 
     let stringSplitedNum = num.toString().split('')
     let devidedNum = []
-    zero = '0'
+    let zero = '0'
     for (let i = 0; i < stringSplitedNum.length; i++) {
         devidedNum.push(stringSplitedNum[i] + (zero.repeat(stringSplitedNum.length - (i + 1))))
     }
     console.log(devidedNum)
     let ansewer = []
     for (let j = 0; j < main.length; j++) {
-
         if (devidedNum.includes(main[j])) {
             ansewer.push(roman[j])
-        } else {
-            ansewer.unshift(roman[j].repeat(devidedNum[0] / main[j]))
-            
-        }
-
-    }
-
+            break
+        } 
+            }
+   
     return ansewer
+    
+    
+
+    //     else {
+    // ansewer.unshift(roman[j].repeat(devidedNum[0] / main[j]))
+    // }
+
+
 }
 console.log(convertToRoman(20))// should return "II".
 
@@ -40,7 +44,7 @@ console.log(convertToRoman(20))// should return "II".
 // console.log(convertToRoman(83)) //  should return "LXXXIII"
 // console.log(convertToRoman(97)) //  should return "XCVII"
 // console.log(convertToRoman(99)) //  should return "XCIX"
-// console.log(convertToRoman(400)) //  should return "CD"
+console.log(convertToRoman(400)) //  should return "CD"
 // console.log(convertToRoman(500)) //  should return "D"
 // console.log(convertToRoman(501)) //  should return "DI"
 // console.log(convertToRoman(649)) //  should return "DCXLIX"
