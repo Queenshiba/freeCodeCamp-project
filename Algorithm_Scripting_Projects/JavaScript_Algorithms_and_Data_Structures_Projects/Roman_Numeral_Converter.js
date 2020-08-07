@@ -1,35 +1,39 @@
-
 function convertToRoman(num) {
-    let main = ["1000", "900", "500", "400", "100", "60", "50", "40", "10", "9", "8", "7", "6", "5", "4", "3", "2", "1"]
-    let roman = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "VIII", "VII", "VI", "V", "IV", "III", "II", "I"]
-
-    let stringSplitedNum = num.toString().split('')
-    let devidedNum = []
-    let zero = '0'
-    for (let i = 0; i < stringSplitedNum.length; i++) {
-        devidedNum.push(stringSplitedNum[i] + (zero.repeat(stringSplitedNum.length - (i + 1))))
+    const romanTable = {
+        M: 1000,
+        CM: 900,
+        D: 500,
+        CD: 400,
+        C: 100,
+        XC: 90,
+        L: 50,
+        XL: 40,
+        X: 10,
+        IX: 9,
+        V: 5,
+        IV: 4,
+        I: 1
     }
-    console.log(devidedNum)
-    let ansewer = []
-    for (let j = 0; j < main.length; j++) {
-        if (devidedNum.includes(main[j])) {
-            ansewer.push(roman[j])
-            break
-        } 
-            }
-   
-    return ansewer
-    
-    
 
-    //     else {
-    // ansewer.unshift(roman[j].repeat(devidedNum[0] / main[j]))
-    // }
+    // create the accumulator
+    let accumulator = ''
 
+    // loop through the table
+    for (const key in romanTable) {
+        const romanTableValue = romanTable[key]
 
+        // while the current number is less than equal to input num
+        while (romanTableValue <= num) {
+            // then subtract the current number from input num.
+            num -= romanTableValue
+            // Add roman numeral symbol to the accumulator
+            accumulator += key
+        }
+
+    }
+    return accumulator
 }
-console.log(convertToRoman(20))// should return "II".
-
+// console.log(convertToRoman(20))
 // console.log(convertToRoman(2))// should return "II".
 // console.log(convertToRoman(3))//  should return "III".
 // console.log(convertToRoman(4))//  should return "IV".
@@ -40,11 +44,11 @@ console.log(convertToRoman(20))// should return "II".
 // console.log(convertToRoman(29)) //  should return "XXIX".
 // console.log(convertToRoman(44)) //  should return "XLIV".
 // console.log(convertToRoman(45)) //  should return "XLV"
-// console.log(convertToRoman(68)) //  should return "LXVIII"
-// console.log(convertToRoman(83)) //  should return "LXXXIII"
+console.log(convertToRoman(68)) //  should return "LXVIII"
+console.log(convertToRoman(83)) //  should return "LXXXIII"
 // console.log(convertToRoman(97)) //  should return "XCVII"
 // console.log(convertToRoman(99)) //  should return "XCIX"
-console.log(convertToRoman(400)) //  should return "CD"
+// console.log(convertToRoman(400)) //  should return "CD"
 // console.log(convertToRoman(500)) //  should return "D"
 // console.log(convertToRoman(501)) //  should return "DI"
 // console.log(convertToRoman(649)) //  should return "DCXLIX"
@@ -54,5 +58,5 @@ console.log(convertToRoman(400)) //  should return "CD"
 // console.log(convertToRoman(1004)) //  should return "MIV"
 // console.log(convertToRoman(1006)) //  should return "MVI"
 // console.log(convertToRoman(1023)) //  should return "MXXIII"
-// console.log(convertToRoman(2014)) //  should return "MMXIV"
-// console.log(convertToRoman(3999)) //  should return "MMMCMXCIX"
+console.log(convertToRoman(2014)) //  should return "MMXIV"
+console.log(convertToRoman(3999)) //  should return "MMMCMXCIX"
