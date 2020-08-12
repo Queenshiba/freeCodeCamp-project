@@ -1,4 +1,7 @@
 function telephoneCheck(str) {
+  if (str.length < 9) {
+    return false
+  }
     return true;
   }
   

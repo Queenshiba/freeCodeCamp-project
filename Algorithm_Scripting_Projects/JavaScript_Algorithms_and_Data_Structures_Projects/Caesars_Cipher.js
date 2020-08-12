@@ -17,7 +17,6 @@ function rot13(str) {
             added.push(e)
         }
     })
-
     // Lastly convert the converted integers into strings created from the specified sequence of UTF-16 code units
     let result = []
     for (let j = 0; j < added.length; j++) {
