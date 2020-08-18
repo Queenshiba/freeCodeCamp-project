@@ -1,7 +1,6 @@
 function telephoneCheck(str) {
 
-  const reg = /^\(?\(\d{1}[1]?)$/
-
+  const reg =   /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
 
   // if (str.length < 9) {
   //   return false
