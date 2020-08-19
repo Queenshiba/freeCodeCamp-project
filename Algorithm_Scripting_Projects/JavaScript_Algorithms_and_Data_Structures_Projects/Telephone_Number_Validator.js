@@ -1,15 +1,19 @@
 function telephoneCheck(str) {
 
-  const reg =   /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
+  const reg = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
+  // /^ means the beginning
+  // (1\s?)? means (optional 1 or space) is optional
+  // (\(\d{3}\)|\d{3}) means \(\d{3}\) 3 digits | or \d{3} 3 digits 
+  // [\s\-]? means optional [ space or "-"]
+  // \d{3} means 3 digits
+  // [\s\-]? means optional [ space or "-"]
+  //  \d{4} means4 digits 
+  // $/ means the end 
 
-  // if (str.length < 9) {
-  //   return false
-  // } 
+  return reg.test(str)
 
-    return reg.test(str)
-  
 
-  
+
 }
 console.log(telephoneCheck("555-555-5555"));
 
