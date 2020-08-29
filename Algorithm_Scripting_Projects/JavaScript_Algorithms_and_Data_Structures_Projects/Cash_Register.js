@@ -12,7 +12,7 @@ let list = [
     ["ONE HUNDRED", 100.00]
   ]
 
-  console.log(list[2])
+  console.log(list[2].)
 
 
 
