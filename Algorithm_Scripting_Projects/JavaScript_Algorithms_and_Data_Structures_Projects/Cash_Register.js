@@ -12,7 +12,11 @@ let list = [
     ["ONE HUNDRED", 100.00]
   ]
 
-  console.log(list[2].)
+  // {status: "INSUFFICIENT_FUNDS", change: []}
+  // {status: "CLOSED", change: [...]}
+  // {status: "OPEN", change: [...]}
+
+  console.log()
 
 
 
