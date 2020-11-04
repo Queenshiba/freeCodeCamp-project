@@ -1,4 +1,10 @@
 function checkCashRegister(price, cash, cid) {
+// Check how much the change is
+// Check how much is in the register
+// Check if it's possible to make the amount of the change from the register
+// if the amount is smaller or not exact the change, return "INSUFFICIENT_FUNDS"
+// if you can return the change, return it with sorted high to low
+
     let change = cash - price
     console.log(change*100)
 let result = {status: "", change: []}
