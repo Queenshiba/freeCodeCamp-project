@@ -6,13 +6,20 @@ function checkCashRegister(price, cash, cid) {
 // if you can return the change, return it with sorted high to low
 
     let change = cash - price
-    console.log(change*100)
+    // console.log(change*100)
 let result = {status: "", change: []}
+let sumOfcidArr = [] 
+cid.forEach(item => {
+
+  sumOfcidArr.push(item[1])
+
+});
+let sums = sumOfcidArr.reduce((a, b) => a + b, 0)
 
 let list = {
     "PENNY": 0.01,
     "NICKEL": 0.05,
-    "DIME": 0.1,
+    "DIME": 0.1, 
     "QUARTER": 0.25,
     "ONE": 1.00,
     "FIVE": 5.00,
@@ -25,7 +32,7 @@ let list = {
   // {status: "CLOSED", change: [...]}
   // {status: "OPEN", change: [...]}
 
-  console.log()
+  console.log(sums)
 
 
 
