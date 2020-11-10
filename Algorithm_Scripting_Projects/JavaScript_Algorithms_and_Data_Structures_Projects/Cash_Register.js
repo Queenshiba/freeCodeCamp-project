@@ -37,6 +37,20 @@ console.log(typeof numAdjustedChange)
     "ONE HUNDRED": 100.00
   }
 
+// Add some function for calculate for change
+
+let change = 7.00
+let values = Object.values(listOfCoin)
+let arr =[]
+for (let i =0; i < values.length; i++){
+  if (change > values[i]){
+    arr.push(change - values[i])
+  }
+}
+console.log(arr)
+
+
+
   // compare change to coins BUT NEED TO CALCULATE THE DITAIL OF CHANGE!!!!
 let changeFromCid = {};
 let objKeys = Object.keys(listOfCoin)
