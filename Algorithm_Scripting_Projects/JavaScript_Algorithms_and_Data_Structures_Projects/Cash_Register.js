@@ -37,26 +37,31 @@ function checkCashRegister(price, cash, cid) {
     "PENNY": 0.01,
   }
 
-// Add some function for calculate for change
+  // Add some function for calculate for change
 
-let change = 113.50
-let values = Object.values(listOfCoin)
-let arr =[]
-for (let i =0; i < values.length; i++){
-  gap = change - values[i]
- 
-  if (gap >  values[i]){
-    let loopgap = gap - values[i]
-  } if (gap = 0) {
-    break
+  // let change = 113.50
+  let values = Object.values(listOfCoin)
+  let arr = []
+  let anotherarr = []
+        
+  for (let i =0; i < values.length; i++){
+    if (change > 0.001 ){
+      // Filtering array with closest smaller values
+let filtered = values.filter(num => num <= change);
+// The closest value will be the maximum
+let closestChange = Math.max(...filtered);
+ change = change - closestChange
+arr.push(change)
+      console.log(closestChange)
+      if(closestChange === values[i]){
+      anotherarr.push(Object.entries(listOfCoin)[i])
+      }
+
+    } else {
+      break
+    }
+
   }
-  // console.log(gap)
-  // if (change > values[i]){
-  //   arr.push(change - values[i])
-  // }
-}
-console.log(gap)
-  console.log(arr)
 
 
 
