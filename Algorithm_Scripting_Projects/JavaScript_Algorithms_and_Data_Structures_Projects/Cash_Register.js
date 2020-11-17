@@ -24,44 +24,47 @@ function checkCashRegister(price, cash, cid) {
   }
   console.log("how much left in Cid", adjustedSum)
 
-  // the change and which coin 
-  let listOfCoin = {
-    "ONE HUNDRED": 100.00,
-    "TWENTY": 20.00,
-    "TEN": 10.00,
-    "FIVE": 5.00,
-    "ONE": 1.00,
-    "QUARTER": 0.25,
-    "DIME": 0.1,
-    "NICKEL": 0.05,
-    "PENNY": 0.01,
-  }
+ // the change and which coin 
+ let listOfCoin = {
+  "ONE HUNDRED": 100.00,
+  "TWENTY": 20.00,
+  "TEN": 10.00,
+  "FIVE": 5.00,
+  "ONE": 1.00,
+  "QUARTER": 0.25,
+  "DIME": 0.1,
+  "NICKEL": 0.05,
+  "PENNY": 0.01,
+}
 
-  // Add some function for calculate for change
+// Add some function for calculate for change
 
-  // let change = 113.50
-  let values = Object.values(listOfCoin)
-  let arr = []
-  let anotherarr = []
-        
-  for (let i =0; i < values.length; i++){
-    if (change > 0.001 ){
-      // Filtering array with closest smaller values
+// let change = 96.74
+let values = Object.values(listOfCoin)
+let arr = []
+let anotherarr = []
+      
+for (let i =0; i < values.length; i++){
+  if (change > 0.001 ){
+    // Filtering array with closest smaller values
 let filtered = values.filter(num => num <= change);
 // The closest value will be the maximum
 let closestChange = Math.max(...filtered);
- change = change - closestChange
+change = change - closestChange
 arr.push(change)
-      console.log(closestChange)
-      if(closestChange === values[i]){
-      anotherarr.push(Object.entries(listOfCoin)[i])
-      }
+    console.log(closestChange)
 
-    } else {
-      break
+    
+    if(closestChange === values[i]){
+    anotherarr.push(Object.entries(listOfCoin)[i])
     }
-
+  } 
+else {
+    break
   }
+  }
+// console.log(typeof arr[0])
+console.log(anotherarr)
 
 
 
