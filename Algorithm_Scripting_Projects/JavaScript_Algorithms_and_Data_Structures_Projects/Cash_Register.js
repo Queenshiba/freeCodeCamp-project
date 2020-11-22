@@ -9,8 +9,8 @@ function checkCashRegister(price, cash, cid) {
   let change = cash - price
   let adjustedChange = change.toFixed(2)
   let numAdjustedChange = parseFloat(adjustedChange)
-  console.log(numAdjustedChange)
-  console.log(typeof numAdjustedChange)
+  // console.log(numAdjustedChange)
+  // console.log(typeof numAdjustedChange)
   // keep numbers of cid values in order to sum them up later
   let cidValues = []
   cid.forEach(item => {
@@ -23,6 +23,45 @@ function checkCashRegister(price, cash, cid) {
 
   }
   console.log("how much left in Cid", adjustedSum)
+
+// testing begining
+// the change and which coin 
+let listOfCoin = {
+  "ONE HUNDRED": 100.00,
+  "TWENTY": 20.00,
+  "TEN": 10.00,
+  "FIVE": 5.00,
+  "ONE": 1.00,
+  "QUARTER": 0.25,
+  "DIME": 0.1,
+  "NICKEL": 0.05,
+  "PENNY": 0.01,
+}
+
+let arr = [ 20, 20, 20, 20, 10, 5, 1, 0.25, 0.25 ]
+let values = Object.values(listOfCoin)
+let entries = Object.entries(listOfCoin)
+console.log("values", values)
+
+let answer = []
+let same = []
+for (let i =0; i < arr.length; i++) {
+if(arr[i-1] === arr[i]){
+  same.push(arr[i])
+}
+  
+  
+  if(values.includes(arr[i])){
+    let index = values.indexOf(arr[i])
+    answer.push(entries[index])
+  }
+}
+console.log(same)
+console.log(answer)
+
+/// testing end
+
+
 
  // the change and which coin 
  let listOfCoin = {
@@ -45,25 +84,25 @@ let arr = []
 let anotherarr = []
       
 for (let i =0; i < values.length; i++){
-  if (change > 0.001 ){
+  if (numAdjustedChange > 0.001 ){
     // Filtering array with closest smaller values
-let filtered = values.filter(num => num <= change);
+let filtered = values.filter(num => num <= numAdjustedChange);
 // The closest value will be the maximum
 let closestChange = Math.max(...filtered);
-change = change - closestChange
-arr.push(change)
-    console.log(closestChange)
+numAdjustedChange = numAdjustedChange - closestChange
+arr.push(numAdjustedChange)
+    console.log("closestChange", closestChange)
 
-    
-    if(closestChange === values[i]){
-    anotherarr.push(Object.entries(listOfCoin)[i])
-    }
+    anotherarr.push(closestChange)
+    // if(closestChange === values[i]){
+    // anotherarr.push(Object.entries(listOfCoin)[i])
+    // }
   } 
 else {
     break
   }
   }
-// console.log(typeof arr[0])
+// console.log(arr)
 console.log(anotherarr)
 
 
@@ -82,7 +121,7 @@ console.log(anotherarr)
       changeFromCid[theObjKey] = theObjValue
     }
   }
-  console.log('changeFromCid', changeFromCid)
+  // console.log('changeFromCid', changeFromCid)
 
   // Prepere for showing the results
   let NewResult = {}
@@ -97,7 +136,7 @@ console.log(anotherarr)
     NewResult.change = changeFromCid
   }
 
-  console.log(NewResult)
+  console.log("NewResult", NewResult)
 
 
 
@@ -115,10 +154,10 @@ console.log(anotherarr)
 
 // console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])) 
 // // should return an object.
-console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]))
+// console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]))
 //  should return {status: "OPEN", change: [["QUARTER", 0.5]]}.
 
-// console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]) ) 
+console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]) ) 
 // should return {status: "OPEN", change: [["TWENTY", 60], ["TEN", 20], ["FIVE", 15], ["ONE", 1], ["QUARTER", 0.5], ["DIME", 0.2], ["PENNY", 0.04]]}.
 // console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]) ) // should return {status: "INSUFFICIENT_FUNDS", change: []}.
 // console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]) ) // should return {status: "INSUFFICIENT_FUNDS", change: []}.
