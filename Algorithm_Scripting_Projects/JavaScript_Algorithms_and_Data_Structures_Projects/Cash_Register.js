@@ -27,15 +27,15 @@ function checkCashRegister(price, cash, cid) {
 // testing begining
 // the change and which coin 
 let listOfCoin = {
-  "ONE HUNDRED": 100.00,
-  "TWENTY": 20.00,
-  "TEN": 10.00,
-  "FIVE": 5.00,
-  "ONE": 1.00,
-  "QUARTER": 0.25,
-  "DIME": 0.1,
-  "NICKEL": 0.05,
   "PENNY": 0.01,
+  "NICKEL": 0.05,
+  "DIME": 0.1,
+  "QUARTER": 0.25,
+  "ONE": 1.00,
+  "FIVE": 5.00,
+   "TEN": 10.00,
+  "TWENTY": 20.00,
+ "ONE HUNDRED": 100.00,  
 }
 
 let arr = [ 20, 20, 20, 20, 10, 5, 1, 0.25, 0.25 ]
@@ -63,18 +63,6 @@ console.log(answer)
 
 
 
- // the change and which coin 
- let listOfCoin = {
-  "ONE HUNDRED": 100.00,
-  "TWENTY": 20.00,
-  "TEN": 10.00,
-  "FIVE": 5.00,
-  "ONE": 1.00,
-  "QUARTER": 0.25,
-  "DIME": 0.1,
-  "NICKEL": 0.05,
-  "PENNY": 0.01,
-}
 
 // Add some function for calculate for change
 
