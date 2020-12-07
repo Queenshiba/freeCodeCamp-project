@@ -24,7 +24,7 @@
 
     // Change to retun  
     let changeToReturn = cash - price
-    console.log("changeToReturn", changeToReturn)
+    // console.log("changeToReturn", changeToReturn)
 
 
     // Compare the total of cid and the change to return
@@ -35,28 +35,32 @@
       // if the change is exact same
     } else if (totalCid === changeToReturn.toFixed(2)) {
       return { status: "CLOSED", change: cid }
+      // if the total of cid is MORE THAN the change to return
     } else {
+      // reverse the order of the list to follow the ansewer FFC wants
+      cid = cid.reverse()
+      // keep looping the objects 
       for (let elem of cid) {
-        let temp = [elem[0], 0];
-        let tempToFixed ;
+        // set temp as the first elements 
+        let temp = [elem[0], 0]
+        
+        // Keep adding or subtracting while the value of list is between the change to return and 0 
         while (changeToReturn >= list[elem[0]] && elem[1] > 0) {
+console.log("temp", temp)
+console.log("elem", elem)
+// Add the value of the list to temp and subtract the value of list from the elem 
           temp[1] += list[elem[0]]
           elem[1] -= list[elem[0]]
           changeToReturn -= list[elem[0]];
           changeToReturn = changeToReturn.toFixed(2);
-
         }
-
+        // keep pushing the items until temp becomes 0
         if (temp[1] > 0) {
-          tempToFixed = temp[1].toFixed(2)
-          detailOfChange.push(tempToFixed)
-
+          detailOfChange.push(temp)
         }
-console.log("temp", tempToFixed)
       }
       
     }
-
     if (changeToReturn > 0) {
       return { status: "INSUFFICIENT_FUNDS", change: [] }
     }
@@ -65,33 +69,12 @@ console.log("temp", tempToFixed)
   }
 
 
-  // Prepere for showing the results
-  // let NewResult = {}
-  // if (adjustedSum === numAdjustedChange) {
-  //   NewResult.status = 'ClOSED'
-  //   NewResult.change = cid
-  // } else if (adjustedSum < numAdjustedChange) {
-  //   NewResult.status = 'INSUFFICIENT_FUNDS'
-  //   NewResult.change = []
-  // } else if (adjustedSum > numAdjustedChange) {
-  //   NewResult.status = 'OPEN'
-  //   NewResult.change = changeFromCid
-  // }
-
-  // console.log("NewResult", NewResult)
-
-
-
-
-
-
-
 // console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])) 
 // // should return an object.
-console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]))
+// console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]))
 //  should return {status: "OPEN", change: [["QUARTER", 0.5]]}.
 
-// console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]))
+console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]))
 // should return {status: "OPEN", change: [["TWENTY", 60], ["TEN", 20], ["FIVE", 15], ["ONE", 1], ["QUARTER", 0.5], ["DIME", 0.2], ["PENNY", 0.04]]}.
 // console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]) ) // should return {status: "INSUFFICIENT_FUNDS", change: []}.
 // console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]) ) // should return {status: "INSUFFICIENT_FUNDS", change: []}.
