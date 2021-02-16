@@ -10,7 +10,7 @@
 		"express": "^4.12.4",
 		"body-parser": "^1.15.2",
 		"mongoose": "2.0.14",
-		"mongodb": "2.0.14"
+		"mongodb": "3.6.1"
 	},
 	"engines": {
 		"node": "4.4.5"
